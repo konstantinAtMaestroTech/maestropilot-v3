@@ -8,5 +8,5 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
-  base: '/maestropilot-v3/'
+  base: '/maestropilot-v3/',
 })
