@@ -13,6 +13,7 @@ const Hero = () => {
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '100%'])
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0])
   
+  
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
