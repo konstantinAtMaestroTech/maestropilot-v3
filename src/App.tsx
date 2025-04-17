@@ -28,7 +28,6 @@ function App() {
   const { scrollYProgress } = useScroll()
   
   const videoSources = [
-    heroVideo,
     identifyComp,
     realtimeTracking,
     interactiveDetail,
@@ -44,7 +43,10 @@ function App() {
         className="fixed top-0 left-0 right-0 h-1 bg-primary z-50"
         style={{ scaleX: scrollYProgress, transformOrigin: '0%' }}
       />
-      <VideoPreloader sources={videoSources} />
+      <VideoPreloader 
+        sources={videoSources} 
+        priority={[heroVideo]} // Load hero video immediately
+      />
       <Navbar />
       <Hero />
       <Vision />
