@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import heroVideo from '../assets/videos/hero-video.webm'
+import heroVideo from '../assets/videos/hero-video.webm?url'
 
 const Hero = () => {
   const ref = useRef<HTMLDivElement>(null)
@@ -12,7 +12,7 @@ const Hero = () => {
   // Parallax effects
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '100%'])
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0])
-  
+
   
   // Animation variants
   const containerVariants = {
