@@ -46,6 +46,7 @@ const Hero = () => {
           loop 
           muted
           className="w-full h-full object-cover"
+          poster='./images/hero-video.jpg'
         >
           <source src={heroVideo} type="video/webm" />
           Your browser does not support the video tag.
