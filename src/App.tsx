@@ -1,5 +1,6 @@
 import { motion, useScroll } from 'framer-motion'
 import './App.css'
+import VideoPreloader from './components/VideoPreloader'
 
 // Components
 import Navbar from './components/Navbar'
@@ -10,10 +11,31 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Vision from './components/Vision'
 
+//Videos
+import identifyComp from './assets/videos/mobile-features/identify-component.webm?url'
+import realtimeTracking from './assets/videos/desktop-features/realtime-tracking.webm?url'
+
+import interactiveDetail from './assets/videos/mobile-features/interactive-detail.webm?url'
+import complexSchedules from './assets/videos/desktop-features/complex-schedules.webm?url'
+
+import attachmentDownload from './assets/videos/mobile-features/attachment-download.webm?url'
+import generateReports from './assets/videos/desktop-features/generate-reports.webm?url'
+
+import heroVideo from './assets/videos/hero-video.webm?url'
+
+
 function App() {
   const { scrollYProgress } = useScroll()
   
-  // Parallax effect for background
+  const videoSources = [
+    heroVideo,
+    identifyComp,
+    realtimeTracking,
+    interactiveDetail,
+    complexSchedules,
+    attachmentDownload,
+    generateReports
+  ]
 
   return (
     <div className="relative overflow-hidden">
@@ -22,7 +44,7 @@ function App() {
         className="fixed top-0 left-0 right-0 h-1 bg-primary z-50"
         style={{ scaleX: scrollYProgress, transformOrigin: '0%' }}
       />
-      
+      <VideoPreloader sources={videoSources} />
       <Navbar />
       <Hero />
       <Vision />
