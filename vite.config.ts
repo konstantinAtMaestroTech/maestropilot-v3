@@ -18,12 +18,12 @@ export default defineConfig({
           'video-assets': [
             // List paths to your video files
             './src/assets/videos/hero-video.webm',
-            './src/videos/mobile-features/identify-component.webm',
-            './src/videos/desktop-features/realtime-tracking.webm',
-            './src/videos/mobile-features/interactive-detail.webm',
-            './src/videos/desktop-features/complex-schedules.webm',
-            './src/videos/mobile-features/attachment-download.webm',
-             './src/videos/desktop-features/generate-reports.webm'
+            './src/assets/videos/mobile-features/identify-component.webm',
+            './src/assets/videos/desktop-features/realtime-tracking.webm',
+            './src/assets/videos/mobile-features/interactive-detail.webm',
+            './src/assets/videos/desktop-features/complex-schedules.webm',
+            './src/assets/videos/mobile-features/attachment-download.webm',
+             './src/assets/videos/desktop-features/generate-reports.webm'
             // Add other video paths
           ]
         }
