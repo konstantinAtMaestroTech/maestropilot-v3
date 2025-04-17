@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import heroVideo from '../assets/videos/hero-video.webm?url'
+import heroVideo from '../assets/videos/hero-video.webm'
 
 const Hero = () => {
   const ref = useRef<HTMLDivElement>(null)

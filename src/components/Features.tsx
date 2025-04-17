@@ -3,14 +3,14 @@ import { motion, useInView } from 'framer-motion'
 
 // videos
 
-import identifyComp from '../assets/videos/mobile-features/identify-component.webm?url'
-import realtimeTracking from '../assets/videos/desktop-features/realtime-tracking.webm?url'
+import identifyComp from '../assets/videos/mobile-features/identify-component.webm'
+import realtimeTracking from '../assets/videos/desktop-features/realtime-tracking.webm'
 
-import interactiveDetail from '../assets/videos/mobile-features/interactive-detail.webm?url'
-import complexSchedules from '../assets/videos/desktop-features/complex-schedules.webm?url'
+import interactiveDetail from '../assets/videos/mobile-features/interactive-detail.webm'
+import complexSchedules from '../assets/videos/desktop-features/complex-schedules.webm'
 
-import attachmentDownload from '../assets/videos/mobile-features/attachment-download.webm?url'
-import generateReports from '../assets/videos/desktop-features/generate-reports.webm?url'
+import attachmentDownload from '../assets/videos/mobile-features/attachment-download.webm'
+import generateReports from '../assets/videos/desktop-features/generate-reports.webm'
 
 // Feature data
 const features = [
