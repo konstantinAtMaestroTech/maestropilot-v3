@@ -34,6 +34,7 @@ const Navbar = () => {
       }
     }
   };
+  
 
   return (
     <motion.nav 
