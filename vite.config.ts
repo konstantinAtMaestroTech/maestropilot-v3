@@ -8,7 +8,7 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
-  base: '/maestropilot-v3/',
+  base: '/',
   build: {
     assetsInlineLimit: 0, // Disable asset inlining for videos
     rollupOptions: {
