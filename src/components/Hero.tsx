@@ -63,14 +63,14 @@ const Hero = () => {
             className='flex flex-col justify-end items-center'
           >
             <motion.h1 
-              className="text-4xl md:text-5xl lg:text-6xl md:text-nowrap font-semibold mb-6 bg-white bg-clip-text text-transparent"
+              className="text-5xl md:text-8xl md:text-nowrap mb-6 bg-white bg-clip-text text-transparent"
               variants={itemVariants}
             >
               From factory floor to final install
             </motion.h1>
             
             <motion.p 
-              className="text-xl md:text-2xl lg:text-3xl text-white mb-8"
+              className="text-3xl md:text-4xl text-white mb-8"
               variants={itemVariants}
             >
               <span className='text-primary'>MaestroPilot</span> bridges production data and site execution for a faster build.

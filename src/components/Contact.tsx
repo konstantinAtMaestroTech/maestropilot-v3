@@ -160,10 +160,10 @@ const Contact = () => {
                   viewport={{ once: true }}
                   className='flex flex-col gap-3'
                 >
-                  <h1 className="text-5xl text-white font-semibold">
+                  <h1 className="text-5xl md:text-7xl text-white">
                     Interested in solving your problems with Maestro Pilot?
                   </h1>
-                  <h1 className="text-5xl text-gray-300">
+                  <h1 className="text-5xl md:text-7xl text-gray-300">
                     Get started with filling out the form below and we will get you in contact with our team.
                   </h1>
                 </motion.div>

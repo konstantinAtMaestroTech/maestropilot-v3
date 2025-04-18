@@ -76,7 +76,7 @@ const Features = () => {
                   <motion.div
                     className='flex flex-col w-full gap-5 md:gap-10'
                   >
-                    <h3 className="text-3xl md:text-5xl font-semibold text-white">
+                    <h3 className="text-5xl md:text-7xl text-white">
                       {feature.title.split("").map((char, charIndex) => (
                         <motion.span
                           key={`${charIndex}-${char}`}

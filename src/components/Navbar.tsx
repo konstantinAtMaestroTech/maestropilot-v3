@@ -9,30 +9,55 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       // Check if we've scrolled past the hero section (approximate height of viewport)
-      setIsScrolled(window.scrollY > window.innerHeight * 0.8)
+      setIsScrolled(window.scrollY > window.innerHeight * 0.1)
     }
     
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const logoVariants = {
+    expanded: {
+      scale: 1.4,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut"
+      }
+    },
+    collapsed: {
+      scale: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut"
+      }
+    }
+  };
+
   return (
     <motion.nav 
-      className={`fixed top-5 left-5 right-5 z-40 transition-all duration-300 bg-transparent shadow-lg p-4 backdrop-blur-xl rounded-md`}
+      className={`fixed top-5 left-5 right-5 z-40 transition-all duration-300 bg-transparent p-4 ${isScrolled ? 'backdrop-blur-xl shadow-lg' : ''} rounded-md`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
       <div className="container-custom flex justify-between items-center">
         {/* Logo */}
-        <motion.a 
-          href="#" 
-          className={`text-2xl font-bold ${isScrolled ? 'text-primary' : 'bg-white bg-clip-text text-transparent'}`}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+        <motion.div 
+          className="flex items-center cursor-pointer"
+          variants={logoVariants}
+          initial="expanded"
+          animate={isScrolled ? "collapsed" : "expanded"}
+          whileHover={{ scale: isScrolled ? 1.45 : 1.05 }}
+          whileTap={{ scale: isScrolled ? 1.4 : 1 }}
         >
-          MaestroPilot
-        </motion.a>
+          <img 
+            src='./maestro.png' 
+            alt="Company Logo" 
+            className="flex h-12 w-auto "
+          />
+      </motion.div>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">

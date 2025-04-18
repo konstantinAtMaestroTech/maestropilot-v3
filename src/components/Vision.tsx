@@ -30,13 +30,13 @@ const Vision = () => {
                 >
                     <motion.h3 
                         style={{ lineHeight }}
-                        className="text-3xl md:text-5xl text-left  text-align font-semibold text-white"
+                        className="text-5xl md:text-7xl text-left  text-align text-white"
                     >
                         Power your operation with technology
                     </motion.h3>
                 </motion.div>
                 <motion.p 
-                    className="text-lg md:text-xl text-white px-4"
+                    className="text-xl md:text-2xl text-white px-4"
                 >
                     Prefabricated construction has long promised faster delivery and lower costs. Turning that promise into reality demands perfectly coordinated operations—from design to assembly.
                 </motion.p>
