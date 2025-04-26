@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import heroVideo from '../assets/videos/hero-video.webm?url'
+import heroVideoDesktop from '../assets/videos/hero-video.webm?url'
+import heroVideoMobile from '../assets/videos/hero-video-mobile.webm?url'
 
 const Hero = () => {
   const ref = useRef<HTMLDivElement>(null)
@@ -10,7 +11,6 @@ const Hero = () => {
   })
 
   // Parallax effects
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '100%'])
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0])
 
   
@@ -35,51 +35,70 @@ const Hero = () => {
   }
 
   return (
-    <div ref={ref} className="relative h-screen overflow-hidden px-10 flex justify-center bg-background" id="home">
-      {/* Background with parallax effect */}
+    <div
+      className='bg-background'
+    >
       <motion.div 
-        className="absolute inset-0 z-0"
-        style={{ y, opacity }}
+        className="fixed h-screen top-0 inset-0 z-0 "
+        style={{ opacity }}
       >
         <video
           autoPlay 
           loop 
           muted
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover hidden md:block"
           poster='./images/hero-video.jpg'
         >
-          <source src={heroVideo} type="video/webm" />
+          <source src={heroVideoDesktop} type="video/webm" />
           Your browser does not support the video tag.
         </video>
       </motion.div>
-      
-      {/* Hero content */}
-      <div className="relative z-10 h-full flex items-end py-20">
-        <div>
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className='flex flex-col justify-end items-center'
-          >
-            <motion.h1 
-              className="text-5xl md:text-8xl md:text-nowrap mb-6 bg-white bg-clip-text text-transparent"
-              variants={itemVariants}
+      <motion.div 
+        className="fixed h-screen top-0 inset-0 z-0 "
+        style={{ opacity }}
+      >
+        <video
+          autoPlay 
+          loop 
+          muted
+          className="w-full h-full object-cover md:hidden"
+          poster='./images/hero-video-mobile.jpg'
+        >
+          <source src={heroVideoMobile} type="video/webm" />
+          Your browser does not support the video tag.
+        </video>
+      </motion.div>
+      <div ref={ref} className="relative h-screen overflow-hidden px-10 flex justify-center bg-transparent" id="home">
+        {/* Background with parallax effect */}
+        
+        {/* Hero content */}
+        <div className="relative z-10 h-full flex items-end py-20">
+          <div>
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              className='flex flex-col justify-end items-center'
             >
-              From factory floor to final install
-            </motion.h1>
-            
-            <motion.p 
-              className="text-3xl md:text-4xl text-white mb-8"
-              variants={itemVariants}
-            >
-              <span className='text-primary'>MaestroPilot</span> bridges production data and site execution for a faster build.
-            </motion.p>
-            
-          </motion.div>
+              <motion.h1 
+                className="text-5xl md:text-8xl md:text-nowrap mb-6 bg-white bg-clip-text text-transparent"
+                variants={itemVariants}
+              >
+                From factory floor to final install
+              </motion.h1>
+              
+              <motion.p 
+                className="text-3xl md:text-4xl text-white mb-8"
+                variants={itemVariants}
+              >
+                <span className='text-primary'>Maestro Pilot</span> bridges production data and site execution for a faster build.
+              </motion.p>
+              
+            </motion.div>
+          </div>
         </div>
+        
       </div>
-      
     </div>
   )
 }

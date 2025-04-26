@@ -15,10 +15,10 @@ const Vision = () => {
   const lineHeight = useTransform(scrollYProgress, [0, 0.5], [0.9, 1.1])
 
   return (
-    <section className="py-24 bg-background overflow-hidden" id="vision">
+    <section className="relative py-24 bg-background overflow-hidden" id="vision">
         <div 
             ref={ref} 
-            className="grid grid-cols-1 sm:gap-5 md:gap-8 lg:gap-20 items-center px-4"
+            className="grid grid-cols-1 sm:gap-5 md:gap-8 lg:gap-20 items-center px-4 "
         >
             <motion.div 
                 style={{ opacity }}
