@@ -19,7 +19,7 @@ const AboutUs = () => {
           className="flex justify-start mb-16 text-left px-10"
         >
           <motion.h2 
-            className="text-5xl md:text-7xl text-white mb-4 max-w-1/2 pl-2"
+            className="text-5xl block md:text-7xl md:max-w-1/2 text-white mb-4 pl-2"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
@@ -114,7 +114,7 @@ const AboutUs = () => {
               className='border rounded-2xl p-7 h-full'
             >
               <p className="text-5xl mb-8">
-                  Integrated with your infrastructure.  
+                  Integrated with your <span className='block md:inline break-words hyphens-auto' >infra&shy;structure.</span>  
               </p>
               <p className="text-2xl mb-10">
                   Looking to optimise your operation, but don't want to substitute tried and tested tools? Inquire about seamless integration with warehousing & ERP systems.
@@ -126,7 +126,7 @@ const AboutUs = () => {
 
         <div className="flex justify-start mt-16 mb-16 text-left px-10 w-full">
           <motion.h2 
-            className="text-5xl md:text-7xl text-white mb-4 max-w-1/2 pl-2 flex w-full"
+            className="text-5xl md:text-7xl text-white mb-4 md:max-w-1/2 pl-2 flex w-full"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -151,7 +151,7 @@ const AboutUs = () => {
             <div
               className='border rounded-2xl p-7 h-full'
             >
-              <p className="text-5xl mb-8">
+              <p className="text-3xl md:text-5xl mb-8">
                 For <span className="font-semibold">manufacturers</span>: optimise your operations
               </p>
               <p className="text-2xl mb-10">
@@ -174,7 +174,7 @@ const AboutUs = () => {
             <div
               className='border rounded-2xl p-7 h-full'
             >
-              <p className="text-5xl mb-8">
+              <p className="text-3xl md:text-5xl mb-8">
                 For <span className="font-semibold">GCs</span>, <span className="font-semibold">PMs</span> and <span className="font-semibold">Developers</span>: master the complexity of your project  
               </p>
               <p className="text-2xl mb-10">
