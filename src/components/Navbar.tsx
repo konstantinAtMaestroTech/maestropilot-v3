@@ -3,7 +3,6 @@ import { motion } from 'framer-motion'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   // Add scroll effect to navbar
   useEffect(() => {
@@ -56,69 +55,39 @@ const Navbar = () => {
           <img 
             src='./maestro.png' 
             alt="Company Logo" 
-            className="flex h-12 w-auto "
+            className="flex h-9 md:h-12 w-auto "
           />
-      </motion.div>
+        </motion.div>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
-          <NavLink href="https://construction-data-hub.vercel.app">Log In</NavLink>
-          <NavLink href="#contact" >Get Started</NavLink>
+        <div
+          className='hidden md:block text-lg text-white'
+        >
+          Maestro Pilot
         </div>
 
-        {/* Mobile menu button */}
-        <div className="md:hidden">
-          <button 
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2 focus:outline-none"
+        <div className="flex items-center">
+          <a 
+            href="https://construction-data-hub.vercel.app"
           >
-            <span className={`block w-6 h-0.5 bg-white mb-1.5 transition-all ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-            <span className={`block w-6 h-0.5 bg-white mb-1.5 transition-all ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
-            <span className={`block w-6 h-0.5 bg-white transition-all ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
-          </button>
+            <div
+              className='text-sm md:text-base p-2 md:py-2 md:px-4 border text-white  hover:bg-primary hover:border-primary hover:text-white'
+            >
+              Log In
+            </div>
+          </a>
+          <a 
+            href="#contact"
+          >
+            <div
+              className='text-sm md:text-base text-background bg-white p-2 md:py-2 md:px-4 border border-white hover:bg-primary hover:border-primary hover:text-white'
+            >
+              Get Started
+            </div>
+          </a>
         </div>
       </div>
-
-      {/* Mobile Navigation */}
-      <motion.div 
-        className={`${isMobileMenuOpen ? 'flex' : 'hidden'} md:hidden flex-col bg-white absolute w-full py-4 shadow-md`}
-        initial={{ opacity: 0, height: 0 }}
-        animate={{ 
-          opacity: isMobileMenuOpen ? 1 : 0,
-          height: isMobileMenuOpen ? 'auto' : 0
-        }}
-        transition={{ duration: 0.3 }}
-      >
-        <div className="container-custom flex flex-col space-y-4">
-          <MobileNavLink href="https://construction-data-hub.vercel.app" onClick={() => setIsMobileMenuOpen(false)}>Log In</MobileNavLink>
-          <MobileNavLink href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Get Started</MobileNavLink>
-        </div>
-      </motion.div>
     </motion.nav>
   )
 }
-
-// NavLink component for desktop
-const NavLink = ({ href, children }: { href: string, children: React.ReactNode }) => (
-  <motion.a 
-    href={href} 
-    className={`font-medium transition-colors text-white hover:text-primary`}
-    whileHover={{ y: -2 }}
-    whileTap={{ y: 0 }}
-  >
-    {children}
-  </motion.a>
-)
-
-// NavLink component for mobile
-const MobileNavLink = ({ href, onClick, children }: { href: string, onClick: () => void, children: React.ReactNode }) => (
-  <a 
-    href={href} 
-    className="text-gray-800 font-medium p-2 hover:bg-gray-50 rounded-md"
-    onClick={onClick}
-  >
-    {children}
-  </a>
-)
 
 export default Navbar
