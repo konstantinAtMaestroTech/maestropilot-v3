@@ -17,6 +17,7 @@ interface FormData {
   lastName: string;
   email: string;
   phone: string;
+  note: string;
 }
 
 interface EmailJSTemplateParams {
@@ -28,6 +29,7 @@ interface EmailJSTemplateParams {
   country: string;
   company_name: string;
   phone: string;
+  note: string;
   [key: string]: string; // This adds the index signature
 }
 
@@ -41,7 +43,8 @@ const Contact = () => {
       firstName: '',
       lastName: '',
       email: '',
-      phone: ''
+      phone: '',
+      note: ''
     });
   
     // Loading and success states
@@ -94,7 +97,7 @@ const Contact = () => {
     );
   
     // Handle input changes
-      const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>): void => {
+      const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>): void => {
         const { name, value } = e.target;
         setFormData({
           ...formData,
@@ -122,7 +125,8 @@ const Contact = () => {
           profession: formData.profession,
           country: formData.country,
           company_name: formData.companyName,
-          phone: formData.phone
+          phone: formData.phone,
+          note: formData.note
         };
         
         await emailjs.send(serviceId, templateId, templateParams, userId);
@@ -135,7 +139,8 @@ const Contact = () => {
           firstName: '',
           lastName: '',
           email: '',
-          phone: ''
+          phone: '',
+          note: '',
         });
       } catch (err) {
         console.error('Error sending email:', err);
@@ -186,7 +191,7 @@ const Contact = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
                   viewport={{ once: true }}
-                  className='flex w-full justify-center items-center'
+                  className='flex w-full justify-center items-center px-3'
                 >
                   <form onSubmit={handleSubmit} className='lg:space-y-4'>
                     {/* Profession Selection */}
@@ -446,6 +451,27 @@ const Contact = () => {
                         required
                         className='py-1 lg:py-2 w-full border border-gray-300 rounded-md px-3 bg-background text-white'
                       />
+                    </div>
+
+                    {/* Note */}
+                    <div
+                      className='relative'
+                    >
+                      <label htmlFor="note" className="block mb-2 text-sm text-left font-medium text-gray-600">
+                        Tell us about your needs: a bit of context will allow us to hit the ground running
+                      </label>
+                      <textarea
+                        id="note"
+                        name="note"
+                        value={formData.note}
+                        onChange={handleChange}
+                        required
+                        maxLength={280}
+                        className='py-1 lg:py-2 w-full border h-16 border-gray-300 rounded-md px-3 bg-background text-white resize-none'
+                      />
+                      <div className={`absolute bottom-2 right-3 text-xs ${formData.note.length > 250 ? 'text-orange-400' : 'text-gray-400'}`}>
+                        {formData.note.length}/280
+                      </div>
                     </div>
                     
                     {/* Error message */}
