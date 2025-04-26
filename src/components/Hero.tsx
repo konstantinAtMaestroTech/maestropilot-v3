@@ -72,23 +72,23 @@ const Hero = () => {
         {/* Background with parallax effect */}
         
         {/* Hero content */}
-        <div className="relative z-10 h-full flex items-end py-20">
+        <div className="relative z-10 h-full flex items-end py-5 md:py-20">
           <div>
             <motion.div
               variants={containerVariants}
               initial="hidden"
               animate="visible"
-              className='flex flex-col justify-end items-center'
+              className='flex flex-col justify-end item-center'
             >
               <motion.h1 
-                className="text-5xl md:text-8xl md:text-nowrap mb-6 bg-white bg-clip-text text-transparent"
+                className="text-2xl sm:text-5xl md:text-8xl md:text-nowrap mb-3 md:mb-6 bg-white bg-clip-text text-transparent"
                 variants={itemVariants}
               >
                 From factory floor to final install
               </motion.h1>
               
               <motion.p 
-                className="text-3xl md:text-4xl text-white mb-8"
+                className="text-lg sm:text-3xl md:text-4xl text-white mb-2 md:mb-8"
                 variants={itemVariants}
               >
                 <span className='text-primary'>Maestro Pilot</span> bridges production data and site execution for a faster build.
