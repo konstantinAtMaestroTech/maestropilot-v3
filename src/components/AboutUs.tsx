@@ -12,7 +12,7 @@ const AboutUs = () => {
       initial={{ backgroundColor: '#1E1E1E' }}
       whileInView={{ backgroundColor: '#646E6E' }}
       transition={{ delay: 0.5, duration: 1.2 }}
-      viewport={{ once: false }}
+      viewport={{ once: true }}
     >
       <div ref={ref}>
         <div 
@@ -23,7 +23,7 @@ const AboutUs = () => {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
           >
             Power your operation with tomorrow's industry standard
           </motion.h2>
@@ -38,7 +38,7 @@ const AboutUs = () => {
                 delay: 0.5,
                 ease: [0.25, 0.1, 0.25, 1.0]
               }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               className='flex flex-col w-full h-full'
           >
             <div
@@ -61,7 +61,7 @@ const AboutUs = () => {
                 delay: 0.8,
                 ease: [0.25, 0.1, 0.25, 1.0]
               }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               className='flex flex-col w-full h-full'
           >
             <div
@@ -84,7 +84,7 @@ const AboutUs = () => {
                 delay: 1.1,
                 ease: [0.25, 0.1, 0.25, 1.0]
               }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               className='flex flex-col w-full h-full'
           >
             <div
@@ -130,7 +130,7 @@ const AboutUs = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
           >
             Get started and build a dedicated tool to power your operation
           </motion.h2>
@@ -145,7 +145,7 @@ const AboutUs = () => {
                 delay: 0.5,
                 ease: [0.25, 0.1, 0.25, 1.0]
               }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               className='flex flex-col w-full h-full'
           >
             <div
@@ -168,7 +168,7 @@ const AboutUs = () => {
                 delay: 0.8,
                 ease: [0.25, 0.1, 0.25, 1.0]
               }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               className='flex flex-col w-full h-full'
           >
             <div

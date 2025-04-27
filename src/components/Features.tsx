@@ -82,7 +82,7 @@ const Features = () => {
                           key={`${charIndex}-${char}`}
                           initial={{ opacity: 0 }}
                           whileInView={{ opacity: 1 }}
-                          viewport={{ once: false }}
+                          viewport={{ once: true }}
                           transition={{
                             duration: 0.1,
                             delay: charIndex * 0.05 + index * 0.2,
@@ -96,7 +96,7 @@ const Features = () => {
                       initial={{ x: 50, opacity: 0 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5, delay: 0.6 }}
-                      viewport={{ once: false }}
+                      viewport={{ once: true }}
                       className="text-3xl md:text-5xl text-gray-300"
                     >
                       {feature.subtitle}
