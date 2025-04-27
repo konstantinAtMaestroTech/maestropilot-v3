@@ -39,13 +39,14 @@ const Hero = () => {
       className='bg-background'
     >
       <motion.div 
-        className="fixed h-screen top-0 inset-0 z-0 "
+        className="fixed h-screen top-0 inset-0 z-0 pointer-events-none"
         style={{ opacity }}
       >
         <video
           autoPlay 
           loop 
           muted
+          playsInline
           className="w-full h-full object-cover hidden md:block"
           poster='./images/hero-video.jpg'
         >
@@ -54,13 +55,14 @@ const Hero = () => {
         </video>
       </motion.div>
       <motion.div 
-        className="fixed h-screen top-0 inset-0 z-0 "
+        className="fixed h-screen top-0 inset-0 z-0 pointer-events-none"
         style={{ opacity }}
       >
         <video
           autoPlay 
           loop 
           muted
+          playsInline
           className="w-full h-full object-cover md:hidden"
           poster='./images/hero-video-mobile.jpg'
         >
