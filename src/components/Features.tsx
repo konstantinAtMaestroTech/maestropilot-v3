@@ -3,14 +3,14 @@ import { motion, useInView } from 'framer-motion'
 
 // videos
 
-import identifyComp from '../assets/videos/mobile-features/identify-component.webm?url'
-import realtimeTracking from '../assets/videos/desktop-features/realtime-tracking.webm?url'
+import identifyComp from '../assets/videos/mobile-features/Identify-Component.mp4?url'
+import realtimeTracking from '../assets/videos/desktop-features/Realtime-Tracking.mp4?url'
 
-import interactiveDetail from '../assets/videos/mobile-features/interactive-detail.webm?url'
-import complexSchedules from '../assets/videos/desktop-features/complex-schedules.webm?url'
+import interactiveDetail from '../assets/videos/mobile-features/Interactive-Detail.mp4?url'
+import complexSchedules from '../assets/videos/desktop-features/Complex-Schedules.mp4?url'
 
-import attachmentDownload from '../assets/videos/mobile-features/attachment-download.webm?url'
-import generateReports from '../assets/videos/desktop-features/generate-reports.webm?url'
+import attachmentDownload from '../assets/videos/mobile-features/Attachment-Download.mp4?url'
+import generateReports from '../assets/videos/desktop-features/Generate-Reports.mp4?url'
 
 // Feature data
 const features = [
@@ -159,7 +159,7 @@ const Features = () => {
                     >
                       <source 
                         src={feature.mobile} 
-                        type="video/webm"
+                        type="video/mp4"
                       />
                       Your browser does not support the video tag.
                     </video>
