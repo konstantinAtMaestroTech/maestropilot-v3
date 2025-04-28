@@ -47,7 +47,7 @@ const Hero = () => {
           loop 
           muted
           playsInline
-          className="w-full h-full object-cover hidden md:block"
+          className="w-full h-full object-cover hidden lg:block"
           poster='./images/hero-video.jpg'
         >
           <source src={heroVideoDesktop} type="video/mp4" />
@@ -63,7 +63,7 @@ const Hero = () => {
           loop 
           muted
           playsInline
-          className="w-full h-full object-cover md:hidden"
+          className="w-full h-full object-cover lg:hidden"
           poster='./images/hero-video-mobile.jpg'
         >
           <source src={heroVideoMobile} type="video/mp4" />
@@ -74,7 +74,7 @@ const Hero = () => {
         {/* Background with parallax effect */}
         
         {/* Hero content */}
-        <div className="relative z-10 h-full flex items-end py-5 md:py-20">
+        <div className="relative z-10 h-full flex items-end py-5 md:pt-20">
           <div>
             <motion.div
               variants={containerVariants}
@@ -83,14 +83,14 @@ const Hero = () => {
               className='flex flex-col justify-end item-center'
             >
               <motion.h1 
-                className="text-2xl sm:text-5xl md:text-8xl md:text-nowrap mb-3 md:mb-6 bg-white bg-clip-text text-transparent"
+                className="text-left sm:text-center text-3xl sm:text-4xl md:text-5xl lg:text-8xl mb-3 md:mb-4 bg-white bg-clip-text text-transparent"
                 variants={itemVariants}
               >
                 From factory floor to final install
               </motion.h1>
               
               <motion.p 
-                className="text-lg sm:text-3xl md:text-4xl text-white mb-2 md:mb-8"
+                className="text-left sm:text-center text-lg sm:text-2xl md:text-3xl text-white mb-2 md:mb-5"
                 variants={itemVariants}
               >
                 <span className='text-primary'>Maestro Pilot</span> bridges production data and site execution for a faster build.
