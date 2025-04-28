@@ -8,17 +8,11 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} MaestroPilot. All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="#" className="text-gray-500 hover:text-white text-sm transition-colors">
-              Terms
-            </a>
-            <a href="#" className="text-gray-500 hover:text-white text-sm transition-colors">
+            <a href="https://www.maestro-tech.com/privacy-policy/" className="text-gray-500 hover:text-white text-sm transition-colors">
               Privacy
             </a>
-            <a href="#" className="text-gray-500 hover:text-white text-sm transition-colors">
+            <a href="https://www.maestro-tech.com/cookie-policy/" className="text-gray-500 hover:text-white text-sm transition-colors">
               Cookies
-            </a>
-            <a href="#" className="text-gray-500 hover:text-white text-sm transition-colors">
-              Accessibility
             </a>
           </div>
         </div>

@@ -153,14 +153,14 @@ const Contact = () => {
   return (
     <section className="section relative overflow-hidden bg-background min-h-screen flex items-center" id="contact">
           <div
-            className={`grid w-full lg:grid-cols-2 justify-items-center my-16`}
+            className='grid w-full lg:grid-cols-2 justify-items-center mt-24 lg:mt-28 mb-16'
           >
             <div
-              className='hidden lg:flex flex-col w-fit justify-between items-start gap-8 text-left'
+              className='hidden lg:flex flex-col w-fit justify-between items-start gap-8 text-left px-3'
             >
                 <motion.div
                   initial={{ x: 50, opacity: 0 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5 }}
                   viewport={{ once: true }}
                   className='flex flex-col gap-3'
@@ -193,7 +193,7 @@ const Contact = () => {
                   viewport={{ once: true }}
                   className='flex w-full justify-center items-center px-3'
                 >
-                  <form onSubmit={handleSubmit} className='lg:space-y-4'>
+                  <form onSubmit={handleSubmit} className='space-y-1 lg:space-y-3'>
                     {/* Profession Selection */}
                     <div>
                       <label htmlFor="profession" className="block mb-2 text-sm text-left font-medium text-gray-600">
