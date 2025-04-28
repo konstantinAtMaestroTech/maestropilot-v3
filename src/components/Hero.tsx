@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import heroVideoDesktop from '../assets/videos/hero-video.webm?url'
-import heroVideoMobile from '../assets/videos/hero-video-mobile.webm?url'
+import heroVideoDesktop from '../assets/videos/Hero-Video.mp4?url'
+import heroVideoMobile from '../assets/videos/Hero-Video-Mobile.mp4?url'
 
 const Hero = () => {
   const ref = useRef<HTMLDivElement>(null)
@@ -50,7 +50,7 @@ const Hero = () => {
           className="w-full h-full object-cover hidden md:block"
           poster='./images/hero-video.jpg'
         >
-          <source src={heroVideoDesktop} type="video/webm" />
+          <source src={heroVideoDesktop} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </motion.div>
@@ -66,7 +66,7 @@ const Hero = () => {
           className="w-full h-full object-cover md:hidden"
           poster='./images/hero-video-mobile.jpg'
         >
-          <source src={heroVideoMobile} type="video/webm" />
+          <source src={heroVideoMobile} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </motion.div>
