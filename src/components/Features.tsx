@@ -155,7 +155,6 @@ const Features = () => {
                       playsInline
                       className="h-[300px] sm:h-[400px] md:h-[400px] lg:h-[600px]"
                       preload="auto"  // Try "auto" instead of default
-                      poster={`./images/${feature.sourceMobile}`}
                     >
                       <source 
                         src={feature.mobile} 
