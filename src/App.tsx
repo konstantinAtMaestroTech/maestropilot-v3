@@ -1,4 +1,5 @@
 import { motion, useScroll } from 'framer-motion'
+import { useState } from 'react'
 import './App.css'
 import VideoPreloader from './components/VideoPreloader'
 import CookieConsent from "react-cookie-consent";
@@ -27,6 +28,7 @@ import heroVideo from './assets/videos/Hero-Video.mp4?url'
 
 function App() {
   const { scrollYProgress } = useScroll()
+  const [isHeroVideoLoaded, setIsHeroVideoLoaded] = useState(false)
   
   const videoSources = [
     identifyComp,
@@ -39,6 +41,12 @@ function App() {
 
   return (
     <div className="relative overflow-hidden">
+      {/* Loading screen - shown until hero video is loaded */}
+      {!isHeroVideoLoaded && (
+        <div className="fixed inset-0 bg-white dark:bg-background z-50 flex items-center justify-center">
+        </div>
+      )}
+      
       {/* Progress bar */}
       <motion.div 
         className="fixed top-0 left-0 right-0 h-1 bg-primary z-50"
@@ -46,15 +54,20 @@ function App() {
       />
       <VideoPreloader 
         sources={videoSources} 
-        priority={[heroVideo]} // Load hero video immediately
+        priority={[heroVideo]} 
+        onPriorityLoaded={() => setIsHeroVideoLoaded(true)}
       />
-      <Navbar />
-      <Hero />
-      <Vision />
-      <Features />
-      <AboutUs />
-      <Contact />
-      <Footer />
+      
+      <div className={isHeroVideoLoaded ? 'opacity-100 transition-opacity duration-500' : 'opacity-0'}>
+        <Navbar />
+        <Hero />
+        <Vision />
+        <Features />
+        <AboutUs />
+        <Contact />
+        <Footer />
+      </div>
+      
       <CookieConsent
         location="bottom"
         buttonText="Accept"
@@ -64,49 +77,8 @@ function App() {
         style={{ 
           background: "#FF4300",
           opacity: 0.9,
-          zIndex: 999, // Ensure it's above everything
-          backdropFilter: "blur(5px)" // Modern glass effect
         }}
-        buttonStyle={{ 
-          background: "#FF4300",
-          borderWidth: 2,
-          borderColor: 'white',
-          borderStyle: 'solid',
-          color: "white", 
-          fontSize: "13px",
-          borderRadius: "4px",
-          padding: "8px 16px",
-          fontWeight: "500",
-          transition: "all 0.3s ease",
-          boxShadow: "0 0 0 0 rgba(255, 255, 255, 0.5)",
-          cursor: "pointer",
-        }}
-        declineButtonStyle={{
-          background: "#1E1E1E",
-          borderWidth: 2,
-          borderColor: '#1E1E1E',
-          borderStyle: 'solid',
-          color: "white",
-          fontSize: "13px",
-          borderRadius: "4px",
-          padding: "8px 16px",
-          fontWeight: "500",
-          marginRight: "10px",
-          cursor: "pointer",
-        }}
-        onDecline={() => {
-          // Handle decline action if needed
-        }}
-        expires={150}
-      >
-        Maestropilot.ai uses cookies to enhance your experience. Learn more about our
-        {" "}
-        <a href="https://www.maestro-tech.com/cookie-policy/" className="text-white underline"> cookies policy</a>
-        {" "}
-        and
-        {" "}
-        <a href="https://www.maestro-tech.com/privacy-policy/" className="text-white underline"> privacy policy</a>
-      </CookieConsent>
+      />
     </div>
   )
 }

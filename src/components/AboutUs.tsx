@@ -35,7 +35,7 @@ const AboutUs = () => {
               whileInView={{ x: 0, y: 0, opacity: 1 }}
               transition={{ 
                 duration: 0.5, 
-                delay: 0.5,
+                delay: 0.3,
                 ease: [0.25, 0.1, 0.25, 1.0]
               }}
               viewport={{ once: true }}
@@ -58,7 +58,7 @@ const AboutUs = () => {
               whileInView={{ x: 0, y: 0, opacity: 1 }}
               transition={{ 
                 duration: 0.5, 
-                delay: 0.8,
+                delay: 0.5,
                 ease: [0.25, 0.1, 0.25, 1.0]
               }}
               viewport={{ once: true }}
@@ -81,7 +81,7 @@ const AboutUs = () => {
               whileInView={{ x: 0, y: 0, opacity: 1 }}
               transition={{ 
                 duration: 0.5, 
-                delay: 1.1,
+                delay: 0.7,
                 ease: [0.25, 0.1, 0.25, 1.0]
               }}
               viewport={{ once: true }}
@@ -104,10 +104,10 @@ const AboutUs = () => {
               whileInView={{ x: 0, y: 0, opacity: 1 }}
               transition={{ 
                 duration: 0.5, 
-                delay: 1.4,
+                delay: 0.9,
                 ease: [0.25, 0.1, 0.25, 1.0]
               }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               className='flex flex-col w-full h-full'
           >
             <div
@@ -142,7 +142,7 @@ const AboutUs = () => {
               whileInView={{ x: 0, y: 0, opacity: 1 }}
               transition={{ 
                 duration: 0.5, 
-                delay: 0.5,
+                delay: 0.3,
                 ease: [0.25, 0.1, 0.25, 1.0]
               }}
               viewport={{ once: true }}
@@ -165,7 +165,7 @@ const AboutUs = () => {
               whileInView={{ x: 0, y: 0, opacity: 1 }}
               transition={{ 
                 duration: 0.5, 
-                delay: 0.8,
+                delay: 0.5,
                 ease: [0.25, 0.1, 0.25, 1.0]
               }}
               viewport={{ once: true }}
