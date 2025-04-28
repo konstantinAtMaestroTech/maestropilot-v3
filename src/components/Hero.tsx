@@ -1,9 +1,13 @@
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import heroVideoDesktop from '../assets/videos/Hero-Video.mp4?url'
 import heroVideoMobile from '../assets/videos/Hero-Video-Mobile.mp4?url'
 
 const Hero = () => {
+
+  const desktopVideoRef = useRef<HTMLVideoElement>(null)
+  const mobileVideoRef = useRef<HTMLVideoElement>(null)
+
   const ref = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -13,6 +17,21 @@ const Hero = () => {
   // Parallax effects
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0])
 
+  useEffect(() => {
+    // Function to ensure videos play
+    const playVideos = () => {
+      if (desktopVideoRef.current) {
+        desktopVideoRef.current.play().catch(e => console.log("Desktop video autoplay prevented:", e));
+      }
+      if (mobileVideoRef.current) {
+        mobileVideoRef.current.play().catch(e => console.log("Mobile video autoplay prevented:", e));
+      }
+    };
+    
+    // Play videos immediately
+    playVideos();
+
+  }, []);
   
   // Animation variants
   const containerVariants = {
@@ -43,6 +62,7 @@ const Hero = () => {
         style={{ opacity }}
       >
         <video
+          ref={desktopVideoRef}
           autoPlay 
           loop 
           muted
@@ -59,6 +79,7 @@ const Hero = () => {
         style={{ opacity }}
       >
         <video
+          ref={mobileVideoRef}
           autoPlay 
           loop 
           muted
