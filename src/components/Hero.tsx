@@ -55,7 +55,7 @@ const Hero = () => {
 
   return (
     <div
-      className='h-dvh bg-background'
+      className='h-svh bg-background'
     >
       <motion.div 
         className="fixed h-screen top-0 inset-0 z-0 pointer-events-none"
