@@ -55,7 +55,7 @@ const Hero = () => {
 
   return (
     <div
-      className='h-svh bg-background'
+      className='h-dvh bg-background'
     >
       <motion.div 
         className="fixed h-screen top-0 inset-0 z-0 pointer-events-none"
@@ -91,7 +91,7 @@ const Hero = () => {
           Your browser does not support the video tag.
         </video>
       </motion.div>
-      <div ref={ref} className="relative h-screen overflow-hidden px-10 flex justify-center bg-transparent" id="home">
+      <div ref={ref} className="relative h-dvh overflow-hidden px-10 flex justify-center bg-transparent" id="home">
         {/* Background with parallax effect */}
         
         {/* Hero content */}
