@@ -121,7 +121,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className='relative z-10 flex items-end my-12 md:hidden'>
+        <div className='relative z-10 flex items-end my-7 md:hidden'>
           <motion.h2
             className="text-left text-white text-4xl"
             variants={itemVariants}
