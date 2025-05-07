@@ -35,11 +35,11 @@ const Vision = () => {
                         Power your operation with technology
                     </motion.h3>
                 </motion.div>
-                <motion.p 
+                <motion.h3
                     className="text-xl md:text-2xl text-white px-4"
                 >
                     Prefabricated construction has long promised faster delivery and lower costs. Turning that promise into reality demands perfectly coordinated operations—from design to assembly.
-                </motion.p>
+                </motion.h3>
             </motion.div>
             <motion.div
                 initial={{ opacity: 0 }}

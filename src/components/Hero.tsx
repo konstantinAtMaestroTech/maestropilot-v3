@@ -54,8 +54,8 @@ const Hero = () => {
   }
 
   return (
-    <div
-      className='h-dvh bg-background'
+    <section
+      className='h-svh bg-background'
     >
       <motion.div 
         className="fixed h-screen top-0 inset-0 z-0 pointer-events-none"
@@ -110,19 +110,19 @@ const Hero = () => {
                 From factory floor to final install
               </motion.h1>
               
-              <motion.p 
+              <motion.h2 
                 className="text-left sm:text-center text-lg sm:text-2xl md:text-3xl text-white mb-2 md:mb-5"
                 variants={itemVariants}
               >
                 <span className='text-primary'>Maestro Pilot</span> bridges production data and site execution for a faster build.
-              </motion.p>
+              </motion.h2>
               
             </motion.div>
           </div>
         </div>
         
       </div>
-    </div>
+    </section>
   )
 }
 
