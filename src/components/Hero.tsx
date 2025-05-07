@@ -91,7 +91,7 @@ const Hero = () => {
           Your browser does not support the video tag.
         </video>
       </motion.div>
-      <div ref={ref} className="relative h-dvh overflow-hidden px-10 flex justify-center bg-transparent" id="home">
+      <div ref={ref} className="relative h-svh overflow-hidden px-10 flex justify-center bg-transparent" id="home">
         {/* Background with parallax effect */}
         
         {/* Hero content */}
@@ -123,7 +123,7 @@ const Hero = () => {
 
         <div className='relative z-10 flex items-end my-12 md:hidden'>
           <motion.h2
-            className="text-left text-white text-5xl"
+            className="text-left text-white text-4xl"
             variants={itemVariants}
           >
             <span className='text-primary'>Maestro Pilot:</span> The operating system for industrialised construction
