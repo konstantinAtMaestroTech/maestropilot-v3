@@ -100,18 +100,18 @@ const Hero = () => {
             <motion.div
               variants={containerVariants}
               initial="hidden"
-              animate="visible"
+              animate="visible" 
               className='flex flex-col justify-end item-center'
             >
               <motion.h1 
-                className="text-left sm:text-center text-3xl sm:text-4xl md:text-5xl lg:text-8xl mb-3 md:mb-4 bg-white bg-clip-text text-transparent"
+                className="hidden md:block text-left sm:text-center text-3xl sm:text-4xl md:text-5xl lg:text-8xl mb-3 md:mb-4 bg-white bg-clip-text text-transparent"
                 variants={itemVariants}
               >
                 From factory floor to final install
               </motion.h1>
               
               <motion.h2 
-                className="text-left sm:text-center text-lg sm:text-2xl md:text-3xl text-white mb-2 md:mb-5"
+                className="hidden md:block text-left sm:text-center text-lg sm:text-2xl md:text-3xl text-white mb-2 md:mb-5"
                 variants={itemVariants}
               >
                 <span className='text-primary'>Maestro Pilot</span> bridges production data and site execution for a faster build.
@@ -119,6 +119,15 @@ const Hero = () => {
               
             </motion.div>
           </div>
+        </div>
+
+        <div className='relative z-10 flex items-end my-12 md:hidden'>
+          <motion.h2
+            className="text-left text-white text-5xl"
+            variants={itemVariants}
+          >
+            <span className='text-primary'>Maestro Pilot:</span> The operating system for industrialised construction
+          </motion.h2>
         </div>
         
       </div>
