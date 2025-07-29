@@ -1,21 +1,24 @@
 import { useRef, useEffect } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useTransform } from 'framer-motion'
 import heroVideoDesktop from '../assets/videos/Hero-Video.mp4?url'
 import heroVideoMobile from '../assets/videos/Hero-Video-Mobile.mp4?url'
 
-const Hero = () => {
+import type { MotionValue } from 'framer-motion'
+
+const Hero = ({
+  scrollYProgress
+}:{
+  scrollYProgress: MotionValue<number>
+}) => {
 
   const desktopVideoRef = useRef<HTMLVideoElement>(null)
   const mobileVideoRef = useRef<HTMLVideoElement>(null)
 
   const ref = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"]
-  })
+
 
   // Parallax effects
-  const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0])
+  const opacity = useTransform(scrollYProgress, [0, 0.1], [1, 0])
 
   useEffect(() => {
     // Function to ensure videos play
@@ -39,17 +42,18 @@ const Hero = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.3,
+        delayChildren: 0.8, // Delay the hero content
       }
     }
   }
   
   const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
+    hidden: { y: 50, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.6, ease: "easeOut" }
+      transition: { duration: 0.8, ease: "easeOut" }
     }
   }
 

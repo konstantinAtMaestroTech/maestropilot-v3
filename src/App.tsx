@@ -1,5 +1,9 @@
 import { motion, useScroll } from 'framer-motion'
-import { useState } from 'react'
+import { 
+  useState, 
+  useRef,
+  useEffect
+} from 'react'
 import './App.css'
 import VideoPreloader from './components/VideoPreloader'
 import CookieConsent from "react-cookie-consent";
@@ -24,11 +28,33 @@ import attachmentDownload from './assets/videos/mobile-features/Attachment-Downl
 import generateReports from './assets/videos/desktop-features/Generate-Reports.mp4?url'
 
 import heroVideo from './assets/videos/Hero-Video.mp4?url'
+import heroVideoMobile from './assets/videos/Hero-Video-Mobile.mp4?url'
 
 
 function App() {
-  const { scrollYProgress } = useScroll()
-  const [isHeroVideoLoaded, setIsHeroVideoLoaded] = useState(false)
+
+  const ref = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: ref
+  })
+  const [isEverythingLoaded, setIsEverythingLoaded] = useState(false)
+  const [showPreloader, setShowPreloader] = useState(true)
+  const [isPreloaderExiting, setIsPreloaderExiting] = useState(false)
+  
+  // Handle the transition timing
+  useEffect(() => {
+    if (isEverythingLoaded) {
+      // Start the exit animation
+      setIsPreloaderExiting(true)
+      
+      // Hide the preloader after the exit animation
+      const timer = setTimeout(() => {
+        setShowPreloader(false)
+      }, 800) // Match the exit animation duration
+      
+      return () => clearTimeout(timer)
+    }
+  }, [isEverythingLoaded])
   
   const videoSources = [
     identifyComp,
@@ -36,37 +62,62 @@ function App() {
     interactiveDetail,
     complexSchedules,
     attachmentDownload,
-    generateReports
+    generateReports,
+    heroVideoMobile
+  ]
+
+  // All image posters used in the app
+  const imageSources = [
+    './images/identify-component.jpg',
+    './images/realtime-tracking.jpg',
+    './images/interactive-detail.jpg',
+    './images/complex-schedules.jpg',
+    './images/attachment-download.jpg',
+    './images/generate-reports.jpg',
+    './images/hero-video.jpg',
+    './images/hero-video-mobile.jpg'
   ]
 
   return (
     <div className="relative overflow-hidden">
-      {/* Loading screen - shown until hero video is loaded */}
-      {!isHeroVideoLoaded && (
-        <div className="fixed inset-0 bg-white dark:bg-background z-50 flex items-center justify-center">
-        </div>
+      {/* Comprehensive preloader with smooth exit */}
+      {showPreloader && (
+        <VideoPreloader 
+          sources={videoSources} 
+          images={imageSources}
+          priority={[heroVideo]} 
+          onAllLoaded={() => setIsEverythingLoaded(true)}
+          showProgress={true}
+          isExiting={isPreloaderExiting}
+        />
       )}
       
-      {/* Progress bar */}
-      <motion.div 
-        className="fixed top-0 left-0 right-0 h-1 bg-primary z-50"
-        style={{ scaleX: scrollYProgress, transformOrigin: '0%' }}
-      />
-      <VideoPreloader 
-        sources={videoSources} 
-        priority={[heroVideo]} 
-        onPriorityLoaded={() => setIsHeroVideoLoaded(true)}
-      />
+      {/* Progress bar - only show when everything is loaded */}
+      {isEverythingLoaded && (
+        <motion.div 
+          className="fixed top-0 left-0 right-0 h-1 bg-primary z-50"
+          style={{ scaleX: scrollYProgress, transformOrigin: '0%' }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
+        />
+      )}
       
-      <div className={isHeroVideoLoaded ? 'opacity-100 transition-opacity duration-500' : 'opacity-0'}>
+      {/* Main content - show with staggered animation when everything is loaded */}
+      <motion.div 
+        ref={ref}
+        className={isEverythingLoaded ? 'block' : 'hidden'}
+      >
         <Navbar />
-        <Hero />
+        <Hero 
+          scrollYProgress={scrollYProgress}
+        />
         <Vision />
         <Features />
         <AboutUs />
         <Contact />
         <Footer />
-      </div>
+      </motion.div>
       
       <CookieConsent
         location="bottom"

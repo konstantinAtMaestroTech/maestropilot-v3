@@ -38,9 +38,13 @@ const Navbar = () => {
   return (
     <motion.nav 
       className={`fixed top-5 left-5 right-5 z-40 transition-all duration-300 bg-transparent p-4 ${isScrolled ? 'backdrop-blur-xl shadow-lg' : ''} rounded-md`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ 
+        duration: 0.8, 
+        ease: "easeOut",
+        delay: 0.6 // Delay the navbar entrance
+      }}
     >
       <div className="container-custom flex justify-between items-center">
         {/* Logo */}
