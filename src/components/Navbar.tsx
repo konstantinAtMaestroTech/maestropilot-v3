@@ -21,7 +21,7 @@ const Navbar = () => {
       y: 0,
       transition: {
         duration: 0.5,
-        ease: "easeInOut"
+        ease: "easeInOut" as const
       }
     },
     collapsed: {
@@ -29,7 +29,7 @@ const Navbar = () => {
       y: 0,
       transition: {
         duration: 0.5,
-        ease: "easeInOut"
+        ease: "easeInOut" as const
       }
     }
   };
@@ -42,7 +42,7 @@ const Navbar = () => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ 
         duration: 0.8, 
-        ease: "easeOut",
+        ease: "easeOut" as const,
         delay: 0.6 // Delay the navbar entrance
       }}
     >
