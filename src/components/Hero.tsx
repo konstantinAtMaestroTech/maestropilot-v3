@@ -53,7 +53,7 @@ const Hero = ({
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.8, ease: "easeOut" }
+      transition: { duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }
     }
   }
 
