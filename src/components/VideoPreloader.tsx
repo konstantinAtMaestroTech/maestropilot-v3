@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect,} from 'react'
 import { motion } from 'framer-motion'
 
 interface VideoPreloaderProps {
@@ -20,7 +20,6 @@ const VideoPreloader = ({
   showProgress = false,
   isExiting = false
 }: VideoPreloaderProps) => {
-  const [loadingProgress, setLoadingProgress] = useState(0)
 
   useEffect(() => {
     const allAssets = [...sources, ...images]
@@ -28,14 +27,9 @@ const VideoPreloader = ({
     let loadedCount = 0
     let priorityLoadedCount = 0
 
-    const updateProgress = () => {
-      const progress = Math.round((loadedCount / totalAssets) * 100)
-      setLoadingProgress(progress)
-    }
 
     const handleAssetLoad = () => {
       loadedCount++
-      updateProgress()
       
       if (loadedCount === totalAssets && onAllLoaded) {
         setTimeout(() => {
